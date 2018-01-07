@@ -1,0 +1,69 @@
+$fonts: 'Montserrat', sans-serif;
+
+body {
+  background-color: gray;
+  font-family: $fonts;
+}
+
+#app {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+.contactForm {
+    align-items: center;
+    display: block;
+    margin: 0 auto;
+    padding: 10px 0;
+    text-align: center;
+    input {
+      height: 30px;
+      margin: 5px;
+      width: 250px;
+      &::placeholder {
+        color: grey;
+        padding-left: 20px;
+      }
+    }
+    button {
+      border: none;
+      font-family: $fonts;
+      font-weight: bolder;
+      height: 30px;
+      margin: 5px;
+      padding: 5px;
+      text-align: center;
+      vertical-align: middle;
+      width: 250px;
+    }
+}
+
+.contactsList {
+  margin: 0 auto;
+  padding: 0;
+}
+
+.contactItem {
+  background-color: #EFF0F1;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 5px;
+  padding: 20px;
+  .img-container {
+    height: 160px;
+    width: 160px;
+  }
+  img {
+    hight: auto;
+    max-width: 100%;
+  }
+  .details-container {
+    color: black;
+    display: block;
+    flex: 1;
+    font-size: 20px;
+    padding: 10px;
+    margin: 0;
+  }
+}
