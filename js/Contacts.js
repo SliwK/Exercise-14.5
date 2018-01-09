@@ -1,3 +1,22 @@
+var Contacts = React.createClass({
+  propTypes: {
+    items: React.PropTypes.array.isRequired,
+  },
+
+  render: function() {
+    var contacts = this.props.items.map(function(contact) {
+        return React.createElement(Contact, {item: contact, key: contact.id});
+    });
+
+    return (
+        React.createElement('div', {className: 'contacts-container'},
+            React.createElement('ul', {className: 'contactsList'}, contacts)
+        )
+    );
+  }
+});
+
+
 var contacts = [
   {
     id: 1,
@@ -24,16 +43,3 @@ var contactForm = {
   lastName: '',
   email: ''
 };
-
-var App = React.createClass({
-  render: function() {
-    return (
-      React.createElement('div', {className: 'app'},
-          React.createElement('div', {className: 'contact-form'},
-            React.createElement(ContactForm, {contact: contactForm})),
-          React.createElement('div', {className: 'contact-list'},
-            React.createElement(Contacts, {items: contacts}, {}))
-      )
-    );
-  }
-});
