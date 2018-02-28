@@ -36,7 +36,8 @@ var ContactForm = React.createClass({
     console.log(this);
 
     this.setState({
-      contacts: this.state.contacts.concat({id, firstName, lastName, email})
+    //  contacts: this.state.contacts.push({id, firstName, lastName, email})
+      contacts: [...this.state.contacts, {id, firstName, lastName, email}]
     });
 
     this.refs.firstName.value = "";
