@@ -1,7 +1,7 @@
 var ContactForm = React.createClass({
   propTypes: {
     contact: React.PropTypes.object.isRequired,
-//    addContact: React.PropTypes.func.isRequired,
+
   },
 
   getInitialState () {
