@@ -1,9 +1,10 @@
-var Contact = React.createClass({
-  propTypes: {
+class Contact extends React.Component {
+/*
+  Contact.propTypes: {
     item: React.PropTypes.object.isRequired,
-  },
-
-  render: function() {
+  };
+*/
+  render() {
     return (
       React.createElement('div', {className: 'row contactItem'},
         React.createElement('div', {className: 'col-md-4 img-container'},
@@ -18,7 +19,8 @@ var Contact = React.createClass({
             React.createElement('a', {className: 'contactEmail', href: 'mailto:' + this.props.item.email},
               this.props.item.email
             )
+        )
       )
-    )
-  );}
-});
+    );
+  }
+}
