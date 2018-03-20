@@ -1,9 +1,6 @@
+
 class Contact extends React.Component {
-/*
-  Contact.propTypes: {
-    item: React.PropTypes.object.isRequired,
-  };
-*/
+
   render() {
     return (
       React.createElement('div', {className: 'row contactItem'},

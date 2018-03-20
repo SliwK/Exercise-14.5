@@ -1,5 +1,5 @@
-class ContactForm extends React.Component {
 
+class ContactForm extends React.Component {
     constructor(props){
       super(props);
       this.state = {
