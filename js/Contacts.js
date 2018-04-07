@@ -1,15 +1,15 @@
+var Contacts = React.createClass({
+  propTypes: {
+    items: React.PropTypes.array.isRequired,   //tutaj z App dostajemy listę contacts jako items
+  },
 
-class Contacts extends React.Component {
-
-  render() {
+  render: function() {
     var contacts = this.props.items.map(function(contact) {
-        return React.createElement(Contact, {item: contact, key: contact.id});
+        return React.createElement(Contact, {item: contact, key: contact.id}); //jako item przesyłamy contact 
     });
 
     return (
-        React.createElement('div', {className: 'contacts-container'},
-            React.createElement('ul', {className: 'contactsList'}, contacts)
-        )
+      React.createElement('ul', {className: 'contactsList'}, contacts)
     );
   }
-}
+});
