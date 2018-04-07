@@ -7,7 +7,7 @@ var ContactForm = React.createClass({
 
   onSubmit: function(e) {
     e.preventDefault();
-    this.props.addContact({firstName: this.firstName, lastName: this.lastName, email: this.email});
+    this.props.addContact({});
   },
 
   render: function() {
