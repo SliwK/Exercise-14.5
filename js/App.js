@@ -36,20 +36,20 @@ var App = React.createClass({
         };
     },
 
-  addContact: function(firstName,lastName,email) {
+  addContact: function({firstName, lastName, email}) {
     var newContact = {
-      id: contacts.length + 1,
-      firstName: this.firstName,
-      lastName: this.lastName,
-      email: this.email
+      id: this.state.contacts.length + 1,
+      firstName: firstName,
+      lastName: lastName,
+      email: email
     };
 
     console.log(newContact);
 
     this.setState(previousList => ({
-        contacts: previousList.contacts.concat(newContact),
-        firstName: "",
-        lastName: "",
+        contacts: previousList.contacts.push(newContact),  //dlaczego "concat" dodaje wpisy które mogę wylogować
+        firstName: "",                                     //a "push" dodaje mi jeden wpis ale potem się wywala ?
+        lastName: "",                                      //pewnie to coś prostego ... tak jak i to jak naprawić czyszczenie inputów....
         email: ""
       })
       );
@@ -63,7 +63,8 @@ var App = React.createClass({
       React.createElement('div', {className: 'app'},
         React.createElement(ContactForm, {
             contact: contactForm,           //tu jako consact wysyłamy contactForm
-            addContact: this.addContact}),  //tu wysyłamy addContact
+            addContact: this.addContact,    //tu wysyłamy addContact
+          }),
         React.createElement(Contacts, {items: contacts}, {})  //tutaj jako items wysyłamy listę contacts
       )
     );

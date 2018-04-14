@@ -5,9 +5,22 @@ var ContactForm = React.createClass({
   },
 
 
-  onSubmit: function(e) {
-    e.preventDefault();
-    this.props.addContact({});
+  onChange: function(event){
+    const target = event.target;
+    const value = target.value;
+    const name = target.name;
+
+    this.setState({
+      [name]: value,
+    });
+
+//    console.log(this);
+  },
+
+
+  onSubmit: function(event) {
+    event.preventDefault();
+    this.props.addContact({firstName: this.state.firstName, lastName: this.state.lastName, email: this.state.email});
   },
 
   render: function() {
@@ -17,20 +30,23 @@ var ContactForm = React.createClass({
               React.createElement('input', {
                 type: 'text',
                 placeholder: 'Imię',
-                ref: 'firstName',
-                value: this.props.contact.firstName,
+                name: 'firstName',
+                value: this.firstName,
+                onChange: this.onChange,
               }),
               React.createElement('input', {
                 type: 'text',
                 placeholder: 'Nazwisko',
-                ref: 'lastName',
-                value: this.props.contact.lastName,
+                name: 'lastName',
+                value: this.lastName,
+                onChange: this.onChange,
               }),
               React.createElement('input', {
                 type: 'email',
                 placeholder: 'Email',
-                ref: 'email',
-                value: this.props.contact.email,
+                name: 'email',
+                value: this.email,
+                onChange: this.onChange,
               }),
               React.createElement('button', {type: 'submit'}, "Dodaj kontakt")
           )
