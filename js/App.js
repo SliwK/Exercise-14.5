@@ -47,12 +47,11 @@ var App = React.createClass({
     console.log(newContact);
 
     this.setState(previousList => ({
-        contacts: previousList.contacts.push(newContact),  //dlaczego "concat" dodaje wpisy które mogę wylogować
-        firstName: "",                                     //a "push" dodaje mi jeden wpis ale potem się wywala ?
-        lastName: "",                                      //pewnie to coś prostego ... tak jak i to jak naprawić czyszczenie inputów....
-        email: ""
-      })
-      );
+        newContact:  previousList.contacts.push(newContact),
+        firstName: " ",
+        lastName: " ",
+        email: " "
+      }));
       console.log(this);
   },
 
